@@ -68,6 +68,6 @@ use "ecthelionvi/NeoSwap.nvim"
 ```Lua
 require("NeoSwap").setup()
 ```
-🙏 Acknowledgments
+## 🙏 Acknowledgments
 
-Special thanks to [insert name(s) here] for their contributions to the development of NeoSwap. Your help is greatly appreciated!
+Special thanks to [LostNeophyte](https://gitlab.com/lostneophyte) for their contributions to the development of NeoSwap. Your help is greatly appreciated!
