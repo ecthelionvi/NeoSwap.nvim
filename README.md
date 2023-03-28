@@ -18,7 +18,7 @@
   </a>
 </p>
 
-![demo]
+![demo](https://raw.githubusercontent.com/ecthelionvi/Images/main/NeoSwap.gif)
 
 ## 📢 Introduction
 
@@ -68,3 +68,6 @@ use "ecthelionvi/NeoSwap.nvim"
 ```Lua
 require("NeoSwap").setup()
 ```
+🙏 Acknowledgments
+
+Special thanks to [insert name(s) here] for their contributions to the development of NeoSwap. Your help is greatly appreciated!
