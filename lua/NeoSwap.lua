@@ -28,15 +28,15 @@ NeoSwap.setup = function()
 end
 
 -- Swap
-local entity_pattern = {}
-entity_pattern.w = {}
-entity_pattern.w._in = "\\w"
-entity_pattern.w.out = "\\W"
-entity_pattern.w.prev_end = "\\zs\\w\\W\\+$"
-entity_pattern.k = {}
-entity_pattern.k._in = "\\k"
-entity_pattern.k.out = "\\k\\@!"
-entity_pattern.k.prev_end = "\\k\\(\\k\\@!.\\)\\+$"
+NeoSwap.entity_pattern = {}
+NeoSwap.entity_pattern.w = {}
+NeoSwap.entity_pattern.w._in = "\\w"
+NeoSwap.entity_pattern.w.out = "\\W"
+NeoSwap.entity_pattern.w.prev_end = "\\zs\\w\\W\\+$"
+NeoSwap.entity_pattern.k = {}
+NeoSwap.entity_pattern.k._in = "\\k"
+NeoSwap.entity_pattern.k.out = "\\k\\@!"
+NeoSwap.entity_pattern.k.prev_end = "\\k\\(\\k\\@!.\\)\\+$"
 
 function NeoSwap.swap_next(cursor_pos, type)
   type = type or "w"
@@ -47,8 +47,8 @@ function NeoSwap.swap_next(cursor_pos, type)
   local c = cursor[2]
   local line_before_cursor = line:sub(1, c + 1)
 
-  local _in = entity_pattern[type]._in
-  local out = entity_pattern[type].out
+  local _in = NeoSwap.entity_pattern[type]._in
+  local out = NeoSwap.entity_pattern[type].out
 
   local current_word_start = fn.match(line_before_cursor, _in .. "\\+$")
   local current_word_end = fn.match(line, _in .. out, current_word_start)
@@ -98,9 +98,9 @@ function NeoSwap.swap_prev(cursor_pos, type)
   local c = cursor[2]
   local line_before_cursor = line:sub(1, c + 1)
 
-  local _in = entity_pattern[type]._in
-  local out = entity_pattern[type].out
-  local prev_end = entity_pattern[type].prev_end
+  local _in = NeoSwap.entity_pattern[type]._in
+  local out = NeoSwap.entity_pattern[type].out
+  local prev_end = NeoSwap.entity_pattern[type].prev_end
 
   local current_word_start = fn.match(line_before_cursor, _in .. "\\+$")
   if current_word_start == -1 then
