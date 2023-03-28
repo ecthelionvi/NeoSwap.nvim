@@ -36,7 +36,7 @@ To swap the position of adjacent words to the right of the cursor, use the `NeoS
 ```vim
 :NeoSwapNext
 ```
-Similarly, to swap the position of adjacent words to the left of the cursor, use the `NeoSwapPrev` command:
+To swap the position of adjacent words to the left of the cursor, use the `NeoSwapNext` command:
 
 ```vim
 :NeoSwapPrev
