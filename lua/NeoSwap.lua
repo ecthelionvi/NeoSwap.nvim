@@ -21,10 +21,10 @@ local user_cmd = vim.api.nvim_create_user_command
 
 NeoSwap.setup = function()
   -- NeoSwapNext
-  user_cmd("NeoSwapNext", "lua require('NeoSwap').swap_next(cursor_pos, type)", {})
+  user_cmd("NeoSwapNext", "lua require('NeoSwap').swap_next()", {})
 
   -- NeoSwapPrev
-  user_cmd("NeoSwapPrev", "lua require('NeoSwap').swap_prev(cursor_pos, type)", {})
+  user_cmd("NeoSwapPrev", "lua require('NeoSwap').swap_prev()", {})
 end
 
 -- Swap
