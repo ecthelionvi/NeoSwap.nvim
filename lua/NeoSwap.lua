@@ -19,14 +19,17 @@ local api = vim.api
 local user_cmd = vim.api.nvim_create_user_command
 
 NeoSwap.setup = function()
-  -- NeoSwapNext
+  if vim.g.neoswap_setup then
+    return
+  end
+
+  vim.g.neoswap_setup = true
+
   user_cmd("NeoSwapNext", "lua require('NeoSwap').swap_next()", {})
 
-  -- NeoSwapPrev
   user_cmd("NeoSwapPrev", "lua require('NeoSwap').swap_prev()", {})
 end
 
--- Swap
 NeoSwap.entity_pattern = {}
 NeoSwap.entity_pattern.w = {}
 NeoSwap.entity_pattern.w._in = "\\w"
